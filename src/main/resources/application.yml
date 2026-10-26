@@ -1,0 +1,21 @@
+---
+spring:
+  application:
+    name: tracelyt-telemetry-pipeline
+
+server:
+  port: ${SERVER_PORT:8082}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: when_authorized
+
+logging:
+  level:
+    root: INFO
+    io.tracelyt.pipeline: ${LOGGING_LEVEL_IO_TRACELYT_PIPELINE:INFO}
